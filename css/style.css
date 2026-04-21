@@ -1,0 +1,105 @@
+/* Base Customizations for Light/Playful Theme */
+body {
+    background-color: white;
+    color: theme('colors.brand-black');
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 768px) {
+    * {
+        cursor: none !important;
+    }
+}
+
+/* Custom Cursor (Light Theme) */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid theme('colors.brand-black');
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+/* Hover state for cursor */
+.custom-cursor.hover-active {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-color: white;
+}
+
+/* Stylized Lanyard Strap */
+.lanyard-strap {
+    background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.lanyard-strap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Outlined Text for "CONTENT" */
+.stroke-text {
+    -webkit-text-stroke: 3px theme('colors.brand-beige');
+    color: transparent;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .stroke-text {
+        -webkit-text-stroke: 1.5px theme('colors.brand-beige');
+    }
+}
+
+/* Experience List Styling */
+.experience-item {
+    position: relative;
+    padding-left: 1.5rem;
+}
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 6px;
+    height: 6px;
+    background-color: theme('colors.brand-beige');
+    border-radius: 50%;
+}
+.experience-item::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 1rem;
+    width: 2px;
+    height: calc(100% + 0.5rem);
+    background-color: #f3f4f6;
+}
+.experience-item:last-child::after {
+    display: none;
+}
+
+/* Project Column Hover Effects */
+.project-card-body {
+    border-radius: 20px;
+}
+@media (min-width: 1024px) {
+    .project-card-body {
+        border-radius: 30px;
+    }
+}
