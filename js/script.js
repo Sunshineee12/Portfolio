@@ -3,31 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Custom Cursor Logic
-    const cursor = document.querySelector('.custom-cursor');
-    const hoverTargets = document.querySelectorAll('a, button, .project-column, .hero-avatar');
 
-    if (window.innerWidth >= 768 && cursor) {
-        // Track mouse movement
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-        });
-
-        // Add hover effects
-        hoverTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover-active');
-            });
-            target.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover-active');
-            });
-        });
-    }
 
     // 2. Hero Scattered Text Animation
     const scatterLetters = document.querySelectorAll('.scatter-letter');
