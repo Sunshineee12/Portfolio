@@ -74,3 +74,41 @@ body {
         border-radius: 30px;
     }
 }
+
+/* --- Global Dark Mode Styles --- */
+body.dark-mode {
+    background-color: #0A0A0A !important; /* Deep Obsidian */
+    color: #f3f4f6 !important;
+}
+body.dark-mode .text-brand-black {
+    color: #f3f4f6 !important;
+}
+body.dark-mode .bg-white {
+    background-color: #1a1a1a !important;
+    border-color: #333333 !important;
+}
+body.dark-mode .bg-gray-100 {
+    background-color: #222222 !important;
+}
+body.dark-mode .border-gray-200 {
+    border-color: #333333 !important;
+}
+body.dark-mode .border-gray-300 {
+    border-color: #444444 !important;
+}
+body.dark-mode p.text-gray-600,
+body.dark-mode p.text-gray-500,
+body.dark-mode h5.text-gray-600 {
+    color: #9ca3af !important;
+}
+/* Ensure strokes stay visible in dark mode */
+body.dark-mode .stroke-text {
+    -webkit-text-stroke: 3px theme('colors.brand-beige');
+    color: transparent !important;
+}
+body.dark-mode .lanyard-strap {
+    background: linear-gradient(to bottom, #374151, #111827) !important;
+}
+body.dark-mode .lanyard-strap::after {
+    background-color: rgba(255,255,255,0.05) !important;
+}

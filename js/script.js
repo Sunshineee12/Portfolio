@@ -64,4 +64,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 6. Theme Toggle Animation
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            // Jump animation
+            gsap.to(themeToggle, {
+                y: -180,
+                duration: 0.5,
+                yoyo: true,
+                repeat: 1,
+                ease: "power2.out",
+                onComplete: () => {
+                    // Toggle dark mode class on body after the jump
+                    document.body.classList.toggle('dark-mode');
+                }
+            });
+        });
+    }
+
 });
